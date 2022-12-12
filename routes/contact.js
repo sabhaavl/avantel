@@ -11,18 +11,30 @@ let transporter = nodemailer.createTransport({
 
 module.exports = async (req, res, next) => {
     try {
+        let sendTo = '';
+        if(req.body.enquiryType == 'Marketing') {
+            sendTo = 'marketing@avental.in';
+        } else if(req.body.enquiryType == 'Procurement') {
+            sendTo = 'materials@avental.in';
+        } else if(req.body.enquiryType == 'Human Resources') {
+            sendTo = 'hr@avental.in';
+        } else if(req.body.enquiryType == 'General') {
+            sendTo = 'info@avental.in';
+        } else if(req.body.enquiryType == 'Investors') {
+            sendTo = 'investors@avental.in';
+        }
         let mailOptions = [
             {
                 from: conf.EMAIL,
                 to: req.body.email,
-                subject: 'Imeds Support',
+                subject: 'Avantel Support',
                 text: `Thank you ${req.body.name} for contacting us, we will get back to you soon!!`
             },
             {
                 from: conf.EMAIL,
-                to: 'marketing@imedsglobal.com',
-                subject: `Imeds Contact Us response form of Email: ${req.body.email} `,
-                text: `Imeds contact us response form \n Name: ${req.body.name} \n Email: ${req.body.email} \n Phone Number: ${req.body.phoneNo} \n City: ${req.body.city} \n Country: ${req.body.country} \n Company: ${req.body.company} \n Product: ${req.body.product} \n Message: ${req.body.msg}`
+                to: sendTo,
+                subject: `Avantel Contact Us response form of Email: ${req.body.email} `,
+                text: `Avantel contact us response form \n Name: ${req.body.name} \n Email: ${req.body.email} \n Phone Number: ${req.body.phone} \n Title: ${req.body.title} \n City: ${req.body.city} \n Country: ${req.body.country} \n Company: ${req.body.company} \n Enquiry Type: ${req.body.enquiryType} \n Message: ${req.body.msg}`
             }
         ]
         for(let i=0; i<mailOptions.length; i++) {
