@@ -13,15 +13,15 @@ module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
         if(req.body.enquiryType == 'Marketing') {
-            sendTo = 'marketing@avental.in';
+            sendTo = 'marketing@avantel.in';
         } else if(req.body.enquiryType == 'Procurement') {
-            sendTo = 'materials@avental.in';
+            sendTo = 'materials@avantel.in';
         } else if(req.body.enquiryType == 'Human Resources') {
-            sendTo = 'hr@avental.in';
+            sendTo = 'hr@avantel.in';
         } else if(req.body.enquiryType == 'General') {
-            sendTo = 'info@avental.in';
+            sendTo = 'info@avantel.in';
         } else if(req.body.enquiryType == 'Investors') {
-            sendTo = 'investors@avental.in';
+            sendTo = 'investors@avantel.in';
         }
         let mailOptions = [
             {
