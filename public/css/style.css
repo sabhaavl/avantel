@@ -125,18 +125,27 @@ body {
     color: #F2F2F2;
 }
 
-.masthead button {
-    padding: 12px 40px;
-    gap: 10px;
-    background: #F2F2F2;
-    border-radius: 100px;
-    color: #225085;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+.carouselImgDiv1 {
+    position: relative;
 }
 
-.masthead button:hover {
+.headerVideoBtn {
+    padding: 12px 40px !important;
+    gap: 10px;
+    background: #F2F2F2 !important;
+    border-radius: 100px !important;
+    color: #225085 !important;
+    font-weight: 400 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+    position: absolute;
+    top: 68%;
+    left: 75.4%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.headerVideoBtn:hover {
     color: #225085;
 }
 
@@ -179,10 +188,10 @@ body {
         line-height: 48px;
     }
 
-    .masthead button {
-        padding: 10px 28px;
-        font-size: 18px;
-        line-height: 22px;
+    .headerVideoBtn {
+        padding: 10px 28px !important;
+        font-size: 18px !important;
+        line-height: 22px !important;
     }
 }
 
@@ -195,13 +204,13 @@ body {
         font-size: 38px;
         line-height: 44px;
     }
-    .masthead button {
-        padding: 8px 24px;
-        font-size: 16px;
-        line-height: 20px;
+    .headerVideoBtn {
+        padding: 8px 24px !important;
+        font-size: 16px !important;
+        line-height: 20px !important;
         align-items: center;
     }
-    .masthead button img {
+    .headerVideoBtn img {
         height: 16px;
     }
 }
@@ -225,8 +234,10 @@ body {
         font-size: 34px;
         line-height: 40px;
     }
-    .masthead button {
-        width: 100%;
+    .headerVideoBtn {
+        width: 149px;
+        top: 73%;
+        padding: 5px 24px !important;
     }
     .subContent {
         margin: 0 30px;
@@ -238,12 +249,28 @@ body {
         max-height: 500px;
         background-image: url('../assets/home/Home page banner1_470x500px-01.jpg');
     }
+    .headerVideoBtn {
+        width: 123px;
+        top: 73%;
+        padding: 3px 20px !important;
+        font-size: 13px !important;
+        align-items: center;
+    }
+    .headerVideoBtn img {
+        height: 12px;
+    }
 }
 
 @media(max-width: 370px) {
     .masthead {
         max-height: 500px;
         background-image: url('../assets/home/Home page banner1_370x500px-01.jpg');
+    }
+    .headerVideoBtn {
+        width: 92px;
+        top: 73%;
+        padding: 0 !important;
+        font-size: 11px !important;
     }
 }
 
