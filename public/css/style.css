@@ -145,6 +145,14 @@ body {
     -ms-transform: translate(-50%, -50%);
 }
 
+.headerVideoBtnPosition {
+    left: 24.4%;
+}
+
+.headerVideoBtnPosition1 {
+    left: 18.4%;
+}
+
 .headerVideoBtn:hover {
     color: #225085;
 }
@@ -223,6 +231,11 @@ body {
     .masthead .justifyContent {
         justify-content: center;
     }
+    .headerVideoBtn {
+        padding: 4px 18px !important;
+        font-size: 14px !important;
+        top: 72%;
+    }
 }
 
 @media(max-width: 570px) {
@@ -235,9 +248,9 @@ body {
         line-height: 40px;
     }
     .headerVideoBtn {
-        width: 149px;
+        width: 120px;
         top: 73%;
-        padding: 5px 24px !important;
+        padding: 4px 14px !important;
     }
     .subContent {
         margin: 0 30px;
