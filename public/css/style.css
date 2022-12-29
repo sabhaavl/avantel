@@ -454,6 +454,17 @@ body {
 
 /* Header carousel end */
 
+/* client icons */
+
+@media(max-width: 470px) {
+    .clientIcons img {
+        width: 70%;
+        margin-bottom: 10px;
+    }
+}
+
+/* client icons */
+
 /* What we do */
 .whatWeDoSection {
     margin-top: 80px;
