@@ -455,6 +455,9 @@ body {
 /* Header carousel end */
 
 /* client icons */
+.clientIcons img {
+    margin-bottom: 30px;
+}
 
 @media(max-width: 470px) {
     .clientIcons img {
