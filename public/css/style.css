@@ -3797,6 +3797,7 @@ body {
     color: #000000;
     text-decoration: none;
     cursor: pointer;
+    margin-bottom: 25px;
 }
 
 .investorsTabSection p {
