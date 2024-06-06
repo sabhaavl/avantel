@@ -1301,6 +1301,10 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+.avlvideo{
+    text-decoration: none;
+}
 @media(max-width: 1440px) {
     .solutionsDiv {
         margin-top: 80px;
