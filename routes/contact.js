@@ -13,8 +13,7 @@ module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
         if(req.body.enquiryType == 'Marketing') {
-            //sendTo = 'marketing@avantel.in';
-            sendTo = 'sabha@simply.science';
+            sendTo = 'marketing@avantel.in';
         } else if(req.body.enquiryType == 'Procurement') {
             sendTo = 'materials@avantel.in';
         } else if(req.body.enquiryType == 'Human Resources') {
