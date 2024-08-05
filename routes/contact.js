@@ -13,7 +13,8 @@ module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
         if(req.body.enquiryType == 'Marketing') {
-            sendTo = 'marketing@avantel.in';
+            //sendTo = 'marketing@avantel.in';
+            sendTo = 'sabha@simply.science';
         } else if(req.body.enquiryType == 'Procurement') {
             sendTo = 'materials@avantel.in';
         } else if(req.body.enquiryType == 'Human Resources') {
@@ -48,6 +49,7 @@ module.exports = async (req, res, next) => {
         }
         return res.status(200).send('Email Sent Successfully');
     } catch (e) {
+        console.log('in mail contact');
         console.log(e);
         return res.status(400).send(e.message);
     }
