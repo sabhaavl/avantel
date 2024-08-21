@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // const mongoose = require('mongoose');
 const cors = require('cors');
-
+const multer = require('multer');
 // mongoose 
 // 	.connect("mongodb://localhost/srtestgen", { useNewUrlParser: true, useUnifiedTopology: true })
 // 	.then(() => console.log("Connected to MongoDB..."))
@@ -13,7 +13,7 @@ const cors = require('cors');
 
 var app = express();
 var contactRouter = require("./routes/contact")
-
+const uploadResumeRouter = require('./routes/uploadResume');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -25,7 +25,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
+// Set up Multer for file upload
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, path.join(__dirname, './public/assets/resumes'));  
+  },
+  filename: function (req, file, cb) {
+    console.log(' file.originalname', file.originalname)
+    cb(null, file.originalname);
+  }
+});
+
+const upload = multer({ storage: storage });
+
+
 app.post('/storeContact', contactRouter);
+app.post('/resume', upload.single('resume'), uploadResumeRouter);
+
 app.use("/*", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
