@@ -2,7 +2,7 @@
 // exports.PASSWORD = "tgbhbzvanbntmhbe";
 
 exports.EMAIL = "hello@simply.science";
-exports.PASSWORD = "SimplyH@2022";
+exports.PASSWORD = "caqg hkih tmvd ozmm"; 
 
 //exports.EMAIL = "contact.us@avantel.in";
 //exports.PASSWORD = "Dell#123";

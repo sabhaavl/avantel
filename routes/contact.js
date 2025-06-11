@@ -8,7 +8,7 @@ let transporter = nodemailer.createTransport({
         pass: conf.PASSWORD
     }
 });
-
+ 
 module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
@@ -32,7 +32,7 @@ module.exports = async (req, res, next) => {
             },
             {
                 from: conf.EMAIL,
-                to: sendTo,
+                to: 'sabha@simply.science',
                 subject: `Avantel Contact Us response form of Email: ${req.body.email} `,
                 text: `Avantel contact us response form \n Name: ${req.body.name} \n Email: ${req.body.email} \n Phone Number: ${req.body.phone} \n Title: ${req.body.title} \n City: ${req.body.city} \n Country: ${req.body.country} \n Company: ${req.body.company} \n Enquiry Type: ${req.body.enquiryType} \n Message: ${req.body.msg}`
             }
