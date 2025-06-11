@@ -19,7 +19,8 @@ module.exports = async (req, res, next) => {
         } else if(req.body.enquiryType == 'Human Resources') {
             sendTo = 'hr@avantel.in';
         } else if(req.body.enquiryType == 'General') {
-            sendTo = 'info@avantel.in';
+            //sendTo = 'info@avantel.in';
+            sendTo = 'sabha@simply.science';
         } else if(req.body.enquiryType == 'Investors') {
             sendTo = 'investors@avantel.in';
         }
@@ -32,7 +33,7 @@ module.exports = async (req, res, next) => {
             },
             {
                 from: conf.EMAIL,
-                to: 'sabha@simply.science',
+                to: sendTo,
                 subject: `Avantel Contact Us response form of Email: ${req.body.email} `,
                 text: `Avantel contact us response form \n Name: ${req.body.name} \n Email: ${req.body.email} \n Phone Number: ${req.body.phone} \n Title: ${req.body.title} \n City: ${req.body.city} \n Country: ${req.body.country} \n Company: ${req.body.company} \n Enquiry Type: ${req.body.enquiryType} \n Message: ${req.body.msg}`
             }
