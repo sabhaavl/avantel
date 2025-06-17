@@ -8,6 +8,9 @@ let transporter = nodemailer.createTransport({
     auth: {
         user: conf.EMAIL,     // e.g. contact.us@avantel.in
         pass: conf.PASSWORD   // App password from Microsoft
+    },
+    tls: {
+        ciphers: 'SSLv3'
     }
 });
 module.exports = async (req, res, next) => {
