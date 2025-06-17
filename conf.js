@@ -5,4 +5,4 @@
 //exports.PASSWORD = "qzwz kofn oalc hyie"; 
 
 exports.EMAIL = "contact.us@avantel.in";
-exports.PASSWORD = "Dell#123";
+exports.PASSWORD = "cnfpgkkrvmdnfcnh";
