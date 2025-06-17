@@ -2,13 +2,14 @@ const nodemailer =  require('nodemailer');
 const conf = require("../conf");
 
 let transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.office365.com',
+    port: 587,
+    secure: false, // use TLS
     auth: {
-        user: conf.EMAIL,
-        pass: conf.PASSWORD
+        user: conf.EMAIL,     // e.g. contact.us@avantel.in
+        pass: conf.PASSWORD   // App password from Microsoft
     }
 });
- 
 module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
