@@ -1,22 +1,22 @@
 const nodemailer =  require('nodemailer');
 const conf = require("../conf");
 
-// let transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//         user: conf.EMAIL,
-//         pass: conf.PASSWORD
-//     }
-// });
 let transporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
-    port: 587,
-    secure: false, // use TLS
+    service: 'gmail',
     auth: {
-        user: conf.EMAIL,     // e.g. contact.us@avantel.in
-        pass: conf.PASSWORD   // App password from Microsoft
+        user: conf.EMAIL,
+        pass: conf.PASSWORD
     }
 });
+// let transporter = nodemailer.createTransport({
+//     host: 'smtp.office365.com',
+//     port: 587,
+//     secure: false, // use TLS
+//     auth: {
+//         user: conf.EMAIL,     // e.g. contact.us@avantel.in
+//         pass: conf.PASSWORD   // App password from Microsoft
+//     }
+// });
 module.exports = async (req, res, next) => {
     try {
         let sendTo = '';
@@ -27,8 +27,8 @@ module.exports = async (req, res, next) => {
         } else if(req.body.enquiryType == 'Human Resources') {
             sendTo = 'hr@avantel.in';
         } else if(req.body.enquiryType == 'General') {
-            //sendTo = 'info@avantel.in';
-            sendTo = 'sabha@simply.science';
+            sendTo = 'info@avantel.in';
+            //sendTo = 'sabha@simply.science';
         } else if(req.body.enquiryType == 'Investors') {
             sendTo = 'investors@avantel.in';
         }
