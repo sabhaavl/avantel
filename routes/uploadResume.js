@@ -11,9 +11,9 @@ let transporter = nodemailer.createTransport({
 
 
 module.exports = (req, res) => {
-    if (!req.file) {
-        return res.status(400).send('No file uploaded.');
-    }
+    // if (!req.file) {
+    //     return res.status(400).send('No file uploaded.');
+    // }
    // let sendTo = 'hiring.avl@avantel.in';
    let sendTo = 'sabha@simply.science';
     //let ccTo = 'sabha@simply.science';
