@@ -23,12 +23,12 @@ module.exports = (req, res) => {
         to: sendTo,
         subject: `New Resume - ${req.body.jobRole}`,
         text: 'Please find attached resume',
-        attachments: [
-            {
-                filename: req.file.filename, // File name to show in email
-                path: req.file.path, // File path
-            },
-        ],
+        // attachments: [
+        //     {
+        //         filename: req.file.filename, // File name to show in email
+        //         path: req.file.path, // File path
+        //     },
+        // ],
     };
     // Send email
     transporter.sendMail(mailOptions, (error, info) => {
