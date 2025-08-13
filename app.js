@@ -28,14 +28,16 @@ app.use(cors());
 // Set up Multer for file upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, path.join(__dirname, './public/assets/resumes'));  
+    cb(null, path.join(__dirname, './public/assets/resumes'));
   },
   filename: function (req, file, cb) {
     console.log(' file.originalname', file.originalname)
-    cb(null, file.originalname);
+    const ext = path.extname(file.originalname);
+    const uniqueName = `${Date.now()}-${Math.round(Math.random() * 1E9)}${ext}`;
+    // cb(null, file.originalname);
+    cb(null, uniqueName);
   }
 });
-
 const upload = multer({ storage: storage });
 
 
