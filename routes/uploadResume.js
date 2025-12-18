@@ -21,8 +21,8 @@ module.exports = (req, res) => {
       });
     }
 
-     //let sendTo = 'hiring.avl@avantel.in';
-     let sendTo = 'sabha@simply.science';
+     let sendTo = 'hiring.avl@avantel.in';
+     //let sendTo = 'sabha@simply.science';
 
     let mailOptions = {
       from: conf.EMAIL,
