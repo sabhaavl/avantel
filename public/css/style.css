@@ -1465,6 +1465,15 @@ body {
     margin-top: 20px;
 }
 
+.solutionsDiv .solution .solutionsBgNewFacility {
+    background-image: url('../assets/services/newfacilities.png');
+    height: 465px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 20px;
+}
+
 .solutionsDiv .solution .solutionsColRight .solutionsBgImg4 {
     background-image: url('../assets/services/solutions/4.png');
     height: 465px;
